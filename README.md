@@ -39,30 +39,10 @@ cp settings.json settings.debug.json
 
 Open your current `settings.json`, copy its contents to a new file called `settings.debug.json`, and then **replace the terminal section** (if it already exists) with this:
 
-📌 *Before* (example of an existing terminal section you might need to replace — delete everything from `"terminal.integrated.defaultProfile.linux"` down to just before the `[c]` block):
-```json
-{
-  "42header.email": "INTRA_LOGIN@student.hive.fi",
-  "42header.username": "INTRA_LOGIN",
-  "terminal.integrated.defaultProfile.linux": "bash",
-  "terminal.integrated.profiles.linux": {
-    "bash": {
-      "path": "host-spawn",
-      "args": ["bash", "-c", "zsh"]
-    }
-  },
-  "[c]": {
-    "editor.defaultFormatter": "keyhr.42-c-format"
-  },
-  "editor.insertSpaces": false
-}
-```
-
-
 
 📥 *Copy the following block into your `settings.debug.json` file:*
 ```json
-{
+
   "terminal.integrated.defaultProfile.linux": "bash",
   "terminal.integrated.profiles.linux": {
     "bash": {
@@ -70,28 +50,16 @@ Open your current `settings.json`, copy its contents to a new file called `setti
       "args": []
     }
   }
-}
 ```
-
-This way, you preserve all your personal settings like autoSave, header formatting, etc., while customizing only the terminal configuration. (keybindings, themes, etc.), and only changes the terminal profile.
 
 ### 3. Create a zsh config (for daily use with aliases):
 
 Open your current `settings.json`, copy it to a new file called `settings.zsh.json`, and **replace the terminal section** (if one exists) with this:
 
-📌 *Before* (a bash-only setup you should replace):
-```json
-"terminal.integrated.defaultProfile.linux": "bash",
-"terminal.integrated.profiles.linux": {
-  "bash": {
-    "path": "/bin/bash",
-    "args": []
-  }
-}
 ```
 
-✅ *After replacing it with the zsh setup — add these lines instead:*
-```json
+✅ *Then add these lines, if they dont already exist into the settings.zsh.json*:
+
 {
   "terminal.integrated.defaultProfile.linux": "zsh",
   "terminal.integrated.profiles.linux": {
